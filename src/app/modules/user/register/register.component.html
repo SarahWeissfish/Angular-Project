@@ -1,0 +1,42 @@
+<div class="form">
+<form  *ngIf="!u1?.id">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" formControlName="userName"  placeholder="שם משתמש">
+        <label for="floatingInput">שם משתמש</label>
+        <ng-container *ngIf="registerForm.controls['userName'].errors&& !registerForm.controls['userName'].pristine">
+            <div class="alert alert-danger">name is not valid </div>
+        </ng-container>
+    
+      </div>
+      <div >
+        <input type="password" class="form-control" id="floatingPassword" formControlName="password" placeholder="סיסמה">
+        <label for="floatingPassword">סיסמה</label>
+        <ng-container *ngIf="registerForm.controls['password'].errors&&!registerForm.controls['password'].pristine">
+            <div class="alert alert-danger">password is invalid</div>
+        </ng-container>
+      </div>
+      <div>
+        <input type="email" class="form-control" id="floatingInput" formControlName="email" placeholder="כתובת מייל">
+        <label for="floatingInput">כתובת מייל</label>
+        <ng-container *ngIf="registerForm.controls['email'].errors&&!registerForm.controls['email'].pristine">
+            <div class="alert alert-danger">email is invalid</div>
+        </ng-container>
+      </div>
+      <div>
+        <input type="text" class="form-control" id="floatingInput" formControlName="address" placeholder="כתובת" >
+        <label for="floatingInput">כתובת</label>
+        <ng-container *ngIf="registerForm.controls['address'].errors&&!registerForm.controls['address'].pristine">
+            <div class="alert alert-danger">address is invalid</div>
+        </ng-container>
+      </div>
+      <button mat-fab extended color="primary" class="save" class="col-2" [disabled]="!registerForm.valid" (click)="register()">הרשמה</button>
+
+
+
+</form>
+<ng-container *ngIf="u1?.id">
+    אתה מחובר
+</ng-container>
+
+
+</div>

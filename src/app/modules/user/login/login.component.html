@@ -1,0 +1,32 @@
+<div class="form">
+<div >
+    <form >
+        <div>
+            <input type="text"  id="floatingInput"  formControlName="userName"  placeholder="שם משתמש" >
+            <label for="floatingInput">שם משתמש</label>
+            <ng-container *ngIf="loginForm.controls['userName'].errors&& !loginForm.controls['userName'].pristine">
+                <div > not name valid</div>
+            </ng-container>
+        </div>
+        <div>
+            <input type="password" id="floatingPassword" placeholder="סיסמא" formControlName="password" >
+            <label for="floatingPassword">סיסמא</label>
+            <ng-container *ngIf="loginForm.controls['password'].errors&& !loginForm.controls['password'].pristine">
+                <div class="alert alert-danger">הסיסמא חייבת להכיל לפחות אות קטנה אחת, אות גדולה אחת ומספר אחד. 6-12
+                    תווים</div>
+            </ng-container>
+        </div>
+        <button  [disabled]="!loginForm.valid" (click)="login()">התחברות</button>
+    </form>
+</div>
+
+<ng-container *ngIf="u?.id">
+    you are connected
+</ng-container>
+
+
+
+
+
+
+</div>
